@@ -28,15 +28,15 @@ services:
 
   app:
     build:
-      context: ./todo
+      context: ./app
     env_file:
-      - ./todo/.env
+      - ./app/.env
     ports:
       - 8080:8080
     networks:
       - app-network
     volumes:
-      - ./todo:/todo
+      - ./app:/app
     depends_on:
       db:
         condition: service_healthy
